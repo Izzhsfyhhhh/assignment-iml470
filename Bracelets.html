@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aurielle of Oré & Argenté - Jewellery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #faf8f6; color: #333; }
+        header { background: #e5d4c0; padding: 30px 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+        nav { background: #bfae9e; padding: 10px 0; text-align: center; }
+        nav a { color: #fff; text-decoration: none; margin: 0 20px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .hero {
+            background: url('https://i.pinimg.com/736x/74/eb/02/74eb02ebff53effad5f3bffba095fbeb.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h2 { font-size: 2em; margin-bottom: 10px; }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 10px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            width: 260px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .product-card:hover { transform: translateY(-5px) scale(1.03); }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-card h3 { margin: 15px 0 10px; font-size: 1.2em; }
+        .product-card p { margin: 0 0 10px; color: #7a6c5d; }
+        .product-card .price { font-weight: bold; color: #bfae9e; }
+        footer {
+            background: #e5d4c0;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.95em;
+            color: #7a6c5d;
+            margin-top: 40px;
+        }
+        @media (max-width: 800px) {
+            .products { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+        <h1 style="font-family: 'Cinzel Decorative', cursive, serif; color: #643f1e;">Aurielle of Oré & Argenté</h1>
+        <p style="font-family: 'Times New Roman', Times, serif; color: #643f1e;">Timeless Jewellery Crafted with Elegance</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="index.html" class="dropbtn" style="color:#fff; text-decoration:none; font-weight:bold;">Collections &#9662;</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#bfae9e; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.1); z-index:1; text-align:left;">
+            <a href="Necklaces.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Necklaces</a>
+            <a href="Rings.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Rings</a>
+            <a href="Earrings.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Earrings</a>
+            <a href="Bracelets.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Bracelets</a>
+            <a href="Watches.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Watches</a>
+            </div>
+        </div>
+        <script>
+            // Simple dropdown functionality
+            document.addEventListener('DOMContentLoaded', function() {
+            var dropdown = document.querySelector('.dropdown');
+            var content = dropdown.querySelector('.dropdown-content');
+            dropdown.addEventListener('mouseenter', function() {
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                content.style.display = 'none';
+            });
+            });
+        </script>
+        <a href="About.html">About</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+
+
+
+
+<!-- Dropdown Example -->
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.dropbtn {
+  background-color: #bfae9e;
+  color: black;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #643f1e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 0px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 0px;
+}
+
+.dropdown-content a:hover {
+  background-color: #643f1e;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #bfae9e;
+}
+</style>
+
+<!-- 3D Bulb Icon Button for Light/Dark Mode -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the button and insert into header
+    var header = document.querySelector('header');
+    var btn = document.createElement('button');
+    btn.id = 'theme-toggle-btn';
+    btn.title = 'Toggle light/dark mode';
+    btn.innerHTML = `
+        <span class="bulb-3d">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <defs>
+                    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ffe066" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#ffe066" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="bulbGlass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#fffbe6"/>
+                        <stop offset="100%" stop-color="#ffe066"/>
+                    </linearGradient>
+                </defs>
+                <ellipse class="bulb-glow" cx="20" cy="22" rx="14" ry="14" fill="url(#bulbGlow)"/>
+                <ellipse cx="20" cy="18" rx="10" ry="12" fill="url(#bulbGlass)" stroke="#e5d4c0" stroke-width="2"/>
+                <rect x="16" y="28" width="8" height="7" rx="3" fill="#bfae9e" stroke="#643f1e" stroke-width="1"/>
+                <rect x="17.5" y="35" width="5" height="2" rx="1" fill="#643f1e"/>
+                <rect x="18" y="32" width="4" height="2" rx="1" fill="#e5d4c0"/>
+                <ellipse cx="20" cy="20" rx="3" ry="4" fill="#fff" opacity="0.25"/>
+            </svg>
+        </span>
+    `;
+    header.style.position = 'relative';
+    header.appendChild(btn);
+
+    // Theme toggle logic: only apply dark mode if body background is white (or default)
+    btn.addEventListener('click', function() {
+        var body = document.body;
+        // Get computed background color of body
+        var bg = window.getComputedStyle(body).backgroundColor;
+        // Check if background is white or near white (rgb(250, 248, 246))
+        if (bg === 'rgb(250, 248, 246)' || bg === 'white' || bg === 'rgb(255, 255, 255)') {
+            body.classList.toggle('dark-mode');
+        }
+    });
+});
+</script>
+<style>
+#theme-toggle-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.bulb-3d {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    perspective: 60px;
+}
+.bulb-3d svg {
+    filter: drop-shadow(0 2px 6px rgba(100,63,30,0.15));
+    transition: filter 0.2s;
+}
+.bulb-3d .bulb-glow {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+body.dark-mode .bulb-3d .bulb-glow {
+    opacity: 0.7;
+}
+body.dark-mode {
+    background: #232323;
+    color: #f5f5f5;
+}
+body.dark-mode header,
+body.dark-mode footer {
+    background: #2d2d2d;
+    color: #bfae9e;
+}
+body.dark-mode nav {
+    background: #3a2e1e;
+}
+body.dark-mode .product-card {
+    background: #2d2d2d;
+    color: #f5f5f5;
+}
+body.dark-mode .product-card .price {
+    color: #e5d4c0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the button and insert into header
+    var header = document.querySelector('header');
+    var btn = document.createElement('button');
+    btn.id = 'theme-toggle-btn';
+    btn.title = 'Toggle light/dark mode';
+    btn.innerHTML = `
+        <span class="bulb-3d">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <defs>
+                    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ffe066" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#ffe066" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="bulbGlass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#fffbe6"/>
+                        <stop offset="100%" stop-color="#ffe066"/>
+                    </linearGradient>
+                </defs>
+                <ellipse class="bulb-glow" cx="20" cy="22" rx="14" ry="14" fill="url(#bulbGlow)"/>
+                <ellipse cx="20" cy="18" rx="10" ry="12" fill="url(#bulbGlass)" stroke="#e5d4c0" stroke-width="2"/>
+                <rect x="16" y="28" width="8" height="7" rx="3" fill="#bfae9e" stroke="#643f1e" stroke-width="1"/>
+                <rect x="17.5" y="35" width="5" height="2" rx="1" fill="#643f1e"/>
+                <rect x="18" y="32" width="4" height="2" rx="1" fill="#e5d4c0"/>
+                <ellipse cx="20" cy="20" rx="3" ry="4" fill="#fff" opacity="0.25"/>
+            </svg>
+        </span>
+    `;
+    header.style.position = 'relative';
+    header.appendChild(btn);
+
+    // Theme toggle logic
+    btn.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+<!-- Filter Buttons -->
+<div style="display:flex; justify-content:center; gap:16px; margin-bottom:32px; margin-top:32px;"></div>
+    <button class="btn btn-filter" data-filter="all" style="background:#b4886b; color:#fff;">Show All</button>
+    <button class="btn btn-filter" data-filter="gold" style="background:#f3e9e1; color:#b4886b;">Gold</button>
+    <button class="btn btn-filter" data-filter="silver" style="background:#f3e9e1; color:#b4886b;">Silver</button>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filtering logic
+    const filterButtons = document.querySelectorAll('.btn-filter');
+    const cards = document.querySelectorAll('.arch-card');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterButtons.forEach(b => b.style.background = '#f3e9e1');
+            filterButtons.forEach(b => b.style.color = '#b4886b');
+            if (btn.dataset.filter === 'all') {
+                btn.style.background = '#b4886b';
+                btn.style.color = '#fff';
+                cards.forEach(card => card.style.display = '');
+            } else {
+                btn.style.background = '#b4886b';
+                btn.style.color = '#fff';
+                cards.forEach(card => {
+                    const title = card.querySelector('.bracelet-title').textContent.toLowerCase();
+                    if (btn.dataset.filter === 'gold' && title.includes('gold')) {
+                        card.style.display = '';
+                    } else if (btn.dataset.filter === 'silver' && title.includes('silver')) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bracelets Collection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            margin: 0;
+            padding: 40px 0;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 32px;
+            justify-content: center;
+        }
+        .arch-card {
+            background: #fff;
+            border-radius: 32px 32px 32px 32px / 64px 64px 32px 32px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            width: 220px;
+            padding: 24px 16px 16px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 16px;
+            transition: box-shadow 0.2s;
+        }
+        .arch-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .arch-image {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            border-radius: 70px 70px 70px 70px / 120px 120px 70px 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            overflow: hidden;
+        }
+        .arch-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 70px 70px 70px 70px / 120px 120px 70px 70px;
+        }
+        .bracelet-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .bracelet-price {
+            color: #b4886b;
+            font-weight: 500;
+            margin-bottom: 14px;
+        }
+        .btn-group {
+            display: flex;
+            gap: 8px;
+            width: 100%;
+            justify-content: center;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            transition: background 0.2s;
+            cursor: pointer; /* Makes button clickable */
+        }
+        /* Notification styles */
+        .notify-message {
+            position: fixed;
+            top: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #b4886b;
+            color: #fff;
+            padding: 12px 32px;
+            border-radius: 24px;
+            font-size: 1.05rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            z-index: 9999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .notify-message.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .btn-cart {
+            background: #f3e9e1;
+            color: #b4886b;
+        }
+        .btn-cart:hover {
+            background: #e5d3c6;
+        }
+        .btn-buy {
+            background: #b4886b;
+            color: #fff;
+        }
+        .btn-buy:hover {
+            background: #a06c4d;
+        }
+    </style>
+</head>
+
+      
+
+
+
+
+
+
+
+<body>
+    <div class="notify-message" id="notifyMessage"></div>
+    <h1 style="text-align:center; color:#b4886b; margin-bottom:32px;">Bracelets Collection</h1> 
+    <!-- Modal for image close-up -->
+    <div id="imageModal" style="display:none; position:fixed; z-index:1000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+        <span id="closeModal" style="position:absolute; top:32px; right:48px; font-size:2.5rem; color:#fff; cursor:pointer;">&times;</span>
+        <img id="modalImg" src="" alt="Bracelet Closeup" style="max-width:90vw; max-height:80vh; border-radius:24px; box-shadow:0 8px 32px rgba(0,0,0,0.3); background:#fff;">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const closeModal = document.getElementById('closeModal');
+            document.querySelectorAll('.arch-image img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function() {
+                    modal.style.display = 'flex';
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                });
+            });
+            closeModal.onclick = function() {
+                modal.style.display = 'none';
+                modalImg.src = '';
+            };
+            modal.onclick = function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    modalImg.src = '';
+                }
+            };
+
+            // Notification logic
+            function showNotify(msg) {
+                const notify = document.getElementById('notifyMessage');
+                notify.textContent = msg;
+                notify.classList.add('show');
+                setTimeout(() => {
+                    notify.classList.remove('show');
+                }, 1800);
+            }
+            document.querySelectorAll('.btn-cart').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    showNotify('Added to cart!');
+                });
+            });
+            document.querySelectorAll('.btn-buy').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    showNotify('Proceeding to buy!');
+                });
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="container">
+          
+    </script>
+    <div class="container">
+        <!-- 22 Arch Cards -->
+        <!-- Replace src with your bracelet images -->
+        <!-- 1 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold cece cuff bracelet.jpg" alt="Bracelet 1">
+            </div>
+            <div class="bracelet-title">gold cece cuff bracelet</div>
+            <div class="bracelet-price">RM2000</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 2 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold cuff bracelet.jpg" alt="Bracelet 2">
+            </div>
+            <div class="bracelet-title">gold cuff bracelet</div>
+            <div class="bracelet-price">RM4360</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 3 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver T-bar snake chain bracelet.jpg" alt="Bracelet 3">
+            </div>
+            <div class="bracelet-title">silver T-bar snake chain bracelet</div>
+            <div class="bracelet-price">RM980</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 4 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold custom spaced letter name bracelet.jpg" alt="Bracelet 4">
+            </div>
+            <div class="bracelet-title">gold custom spaced letter name bracelet</div>
+            <div class="bracelet-price">RM1500</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 5 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver sparkling herbarium cluster chain bracelet.jpg" alt="Bracelet 5">
+            </div>
+            <div class="bracelet-title">silver sparkling herbarium cluster chain bracelet</div>
+            <div class="bracelet-price">RM1000</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 6 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver sparkling bold tennis bracelet.jpg" alt="Bracelet 6">
+            </div>
+            <div class="bracelet-title">silver sparkling bold tennis bracelet</div>
+            <div class="bracelet-price">RM1230</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 7 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold deja plated brass bracelet.jpg" alt="Bracelet 7">
+            </div>
+            <div class="bracelet-title">gold deja plated brass bracelet</div>
+            <div class="bracelet-price">RM1290</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 8 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold eve tennis bracelet.jpg" alt="Bracelet 8">
+            </div>
+            <div class="bracelet-title">gold eve tennis bracelet</div>
+            <div class="bracelet-price">RM4200</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 9 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver red sparkling heart tennis bracelet.jpg" alt="Bracelet 9">
+            </div>
+            <div class="bracelet-title">silver red sparkling heart tennis bracelet</div>
+            <div class="bracelet-price">RM2200</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 10 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver metal bead & chain bracelet.jpg" alt="Bracelet 10">
+            </div>
+            <div class="bracelet-title">silver metal bead & chain bracelet</div>
+            <div class="bracelet-price">RM1600</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 11 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold heart bracelet.jpg" alt="Bracelet 11">
+            </div>
+            <div class="bracelet-title">gold heart bracelet</div>
+            <div class="bracelet-price">RM3000</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 12 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold keira ribbed bracelet.jpg" alt="Bracelet 12">
+            </div>
+            <div class="bracelet-title">gold keira ribbed bracelet</div>
+            <div class="bracelet-price">RM8900</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 13 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver link chain bracelet.jpg" alt="Bracelet 13">
+            </div>
+            <div class="bracelet-title">silver link chain bracelet</div>
+            <div class="bracelet-price">RM1100</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 14 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold petunia bracelet.jpg" alt="Bracelet 14">
+            </div>
+            <div class="bracelet-title">gold petunia bracelet</div>
+            <div class="bracelet-price">rm7600</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 15 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold plated brass bracelet.jpg" alt="Bracelet 15">
+            </div>
+            <div class="bracelet-title">gold plated brass bracelet</div>
+            <div class="bracelet-price">rm2220</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 16 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver infinity knot snake chain bracelet.jpg" alt="Bracelet 16">
+            </div>
+            <div class="bracelet-title">silver infinity knot snake chain bracelet</div>
+            <div class="bracelet-price">RM1000</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 17 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold rivera stretch bracelet.jpg" alt="Bracelet 17">
+            </div>
+            <div class="bracelet-title">gold rivera stretch bracelet</div>
+            <div class="bracelet-price">RM4500</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 18 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver halo heart bracelet.jpg" alt="Bracelet 18">
+            </div>
+            <div class="bracelet-title">silver halo heart bracelet</div>
+            <div class="bracelet-price">RM2299</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 19 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold sea creatures charm bracelet.jpg" alt="Bracelet 19">
+            </div>
+            <div class="bracelet-title">gold sea creatures charm bracelet</div>
+            <div class="bracelet-price">RM7999</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 20 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver celestial stars bracelet.jpg" alt="Bracelet 20">
+            </div>
+            <div class="bracelet-title">silver celestial stars bracelet</div>
+            <div class="bracelet-price">RM3229</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 21 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\silver firecracker pave bars bracelet.jpg" alt="Bracelet 21">
+            </div>
+            <div class="bracelet-title">silver firecracker pave bars bracelet</div>
+            <div class="bracelet-price">RM4000</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+        <!-- 22 -->
+        <div class="arch-card">
+            <div class="arch-image">
+                <img src="c:\Users\HP\Desktop\DEGREE SEM 2 AYREEN\GROUP ASSIGNMENT IML470\gold skye layered bracelet.jpg" alt="Bracelet 22">
+            </div>
+            <div class="bracelet-title">gold skye layered bracelet</div>
+            <div class="bracelet-price">RM4699</div>
+            <div class="btn-group">
+                <button class="btn btn-cart">Add to Cart</button>
+                <button class="btn btn-buy">Buy Now</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<footer style="width:100%; position:relative; left:0; right:0; background:#e5d4c0; text-align:center; padding: 6px; font-size:0.95em; color:#7a6c5d; margin-top:40px;">
+    <p>&copy; 2024 Aurielle of Oré & Argenté. All rights reserved.</p>
+</footer>
+

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aurielle of Oré & Argenté - Jewellery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #faf8f6; color: #333; }
+        header { background: #e5d4c0; padding: 30px 0; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; letter-spacing: 2px; }
+        nav { background: #bfae9e; padding: 10px 0; text-align: center; }
+        nav a { color: #fff; text-decoration: none; margin: 0 20px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        .hero {
+            background: url('https://i.pinimg.com/736x/74/eb/02/74eb02ebff53effad5f3bffba095fbeb.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .hero h2 { font-size: 2em; margin-bottom: 10px; }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 10px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            width: 260px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .product-card:hover { transform: translateY(-5px) scale(1.03); }
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .product-card h3 { margin: 15px 0 10px; font-size: 1.2em; }
+        .product-card p { margin: 0 0 10px; color: #7a6c5d; }
+        .product-card .price { font-weight: bold; color: #bfae9e; }
+        footer {
+            background: #e5d4c0;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.95em;
+            color: #7a6c5d;
+            margin-top: 40px;
+        }
+        @media (max-width: 800px) {
+            .products { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative&display=swap" rel="stylesheet">
+        <h1 style="font-family: 'Cinzel Decorative', cursive, serif; color: #643f1e;">Aurielle of Oré & Argenté</h1>
+        <p style="font-family: 'Times New Roman', Times, serif; color: #643f1e;">Timeless Jewellery Crafted with Elegance</p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown" style="display:inline-block; position:relative;">
+            <a href="index.html" class="dropbtn" style="color:#fff; text-decoration:none; font-weight:bold;">Collections &#9662;</a>
+            <div class="dropdown-content" style="display:none; position:absolute; background:#bfae9e; min-width:160px; box-shadow:0 8px 16px rgba(0,0,0,0.1); z-index:1; text-align:left;">
+            <a href="Necklaces.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Necklaces</a>
+            <a href="Rings.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Rings</a>
+            <a href="Earrings.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Earrings</a>
+            <a href="Bracelets.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Bracelets</a>
+            <a href="Watches.html" style="color:#fff; padding:10px 16px; display:block; text-decoration:none;">Watches</a>
+            </div>
+        </div>
+        <script>
+            // Simple dropdown functionality
+            document.addEventListener('DOMContentLoaded', function() {
+            var dropdown = document.querySelector('.dropdown');
+            var content = dropdown.querySelector('.dropdown-content');
+            dropdown.addEventListener('mouseenter', function() {
+                content.style.display = 'block';
+            });
+            dropdown.addEventListener('mouseleave', function() {
+                content.style.display = 'none';
+            });
+            });
+        </script>
+        <a href="About.html">About</a>
+        <a href="Contact.html">Contact</a>
+    </nav>
+
+
+
+
+
+<!-- Dropdown Example -->
+<style>
+.dropdown {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.dropbtn {
+  background-color: #bfae9e;
+  color: black;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #643f1e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 0px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 0px;
+}
+
+.dropdown-content a:hover {
+  background-color: #643f1e;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #bfae9e;
+}
+</style>
+
+<!-- 3D Bulb Icon Button for Light/Dark Mode -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the button and insert into header
+    var header = document.querySelector('header');
+    var btn = document.createElement('button');
+    btn.id = 'theme-toggle-btn';
+    btn.title = 'Toggle light/dark mode';
+    btn.innerHTML = `
+        <span class="bulb-3d">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <defs>
+                    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ffe066" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#ffe066" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="bulbGlass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#fffbe6"/>
+                        <stop offset="100%" stop-color="#ffe066"/>
+                    </linearGradient>
+                </defs>
+                <ellipse class="bulb-glow" cx="20" cy="22" rx="14" ry="14" fill="url(#bulbGlow)"/>
+                <ellipse cx="20" cy="18" rx="10" ry="12" fill="url(#bulbGlass)" stroke="#e5d4c0" stroke-width="2"/>
+                <rect x="16" y="28" width="8" height="7" rx="3" fill="#bfae9e" stroke="#643f1e" stroke-width="1"/>
+                <rect x="17.5" y="35" width="5" height="2" rx="1" fill="#643f1e"/>
+                <rect x="18" y="32" width="4" height="2" rx="1" fill="#e5d4c0"/>
+                <ellipse cx="20" cy="20" rx="3" ry="4" fill="#fff" opacity="0.25"/>
+            </svg>
+        </span>
+    `;
+    header.style.position = 'relative';
+    header.appendChild(btn);
+
+    // Theme toggle logic: only apply dark mode if body background is white (or default)
+    btn.addEventListener('click', function() {
+        var body = document.body;
+        // Get computed background color of body
+        var bg = window.getComputedStyle(body).backgroundColor;
+        // Check if background is white or near white (rgb(250, 248, 246))
+        if (bg === 'rgb(250, 248, 246)' || bg === 'white' || bg === 'rgb(255, 255, 255)') {
+            body.classList.toggle('dark-mode');
+        }
+    });
+});
+</script>
+<style>
+#theme-toggle-btn {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 10;
+}
+.bulb-3d {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    perspective: 60px;
+}
+.bulb-3d svg {
+    filter: drop-shadow(0 2px 6px rgba(100,63,30,0.15));
+    transition: filter 0.2s;
+}
+.bulb-3d .bulb-glow {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+body.dark-mode .bulb-3d .bulb-glow {
+    opacity: 0.7;
+}
+body.dark-mode {
+    background: #232323;
+    color: #f5f5f5;
+}
+body.dark-mode header,
+body.dark-mode footer {
+    background: #2d2d2d;
+    color: #bfae9e;
+}
+body.dark-mode nav {
+    background: #3a2e1e;
+}
+body.dark-mode .product-card {
+    background: #2d2d2d;
+    color: #f5f5f5;
+}
+body.dark-mode .product-card .price {
+    color: #e5d4c0;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the button and insert into header
+    var header = document.querySelector('header');
+    var btn = document.createElement('button');
+    btn.id = 'theme-toggle-btn';
+    btn.title = 'Toggle light/dark mode';
+    btn.innerHTML = `
+        <span class="bulb-3d">
+            <svg width="40" height="40" viewBox="0 0 40 40">
+                <defs>
+                    <radialGradient id="bulbGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#ffe066" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#ffe066" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="bulbGlass" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#fffbe6"/>
+                        <stop offset="100%" stop-color="#ffe066"/>
+                    </linearGradient>
+                </defs>
+                <ellipse class="bulb-glow" cx="20" cy="22" rx="14" ry="14" fill="url(#bulbGlow)"/>
+                <ellipse cx="20" cy="18" rx="10" ry="12" fill="url(#bulbGlass)" stroke="#e5d4c0" stroke-width="2"/>
+                <rect x="16" y="28" width="8" height="7" rx="3" fill="#bfae9e" stroke="#643f1e" stroke-width="1"/>
+                <rect x="17.5" y="35" width="5" height="2" rx="1" fill="#643f1e"/>
+                <rect x="18" y="32" width="4" height="2" rx="1" fill="#e5d4c0"/>
+                <ellipse cx="20" cy="20" rx="3" ry="4" fill="#fff" opacity="0.25"/>
+            </svg>
+        </span>
+    `;
+    header.style.position = 'relative';
+    header.appendChild(btn);
+
+    // Theme toggle logic
+    btn.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section style="max-width: 900px; margin: 50px auto 0; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(100,63,30,0.08); padding: 40px 30px;"></section>
+    <h2 style="font-family: 'Cinzel Decorative', cursive, serif; color: #643f1e; text-align: center; margin-bottom: 10px;">Contact Us</h2>
+    <p style="text-align: center; color: #7a6c5d; margin-bottom: 30px;">We'd love to hear from you. Please fill out the form below or reach us directly using the details provided.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+        <form style="flex: 1 1 320px; min-width: 280px;">
+            <label style="display:block; margin-bottom:10px; color:#643f1e; font-weight:bold; text-align:center;">Name</label>
+            <input type="text" name="name" required style="width:100%; padding:10px; border:1px solid #e5d4c0; border-radius:6px; margin-bottom:18px; font-size:1em;">
+            <label style="display:block; margin-bottom:10px; color:#643f1e; font-weight:bold; text-align:center;">Email</label>
+            <input type="email" name="email" required style="width:100%; padding:10px; border:1px solid #e5d4c0; border-radius:6px; margin-bottom:18px; font-size:1em;">
+            <label style="display:block; margin-bottom:10px; color:#643f1e; font-weight:bold; text-align:center;">Message</label>
+            <textarea name="message" rows="5" required style="width:100%; padding: 15px; border:1px solid #e5d4c0; border-radius:6px; margin-bottom:18px; font-size:1em;"></textarea>
+            <button type="submit" style="background:#bfae9e; color:#fff; border:none; border-radius:6px; padding:12px 28px; font-size:1em; font-family:'Cinzel Decorative', cursive, serif; font-weight:bold; cursor:pointer; transition:background 0.2s;">Send Message</button>
+        </form>
+        <div style="flex: 1 1 320px; min-width: 280px;">
+            <h3 style="color:#643f1e; font-family:'Cinzel Decorative', cursive, serif; margin-bottom:18px;">Business Contact Details</h3>
+            <table style="width:100%; border-collapse:collapse; background:#faf8f6; border-radius:8px; box-shadow:0 1px 4px rgba(100,63,30,0.05); overflow:hidden;">
+                <tr style="background:#e5d4c0;">
+                    <th style="text-align:left; padding:12px; color:#643f1e; font-weight:bold;">Type</th>
+                    <th style="text-align:left; padding:12px; color:#643f1e; font-weight:bold;">Details</th>
+                </tr>
+                <tr>
+                    <td style="padding:12px; color:#7a6c5d;">Email</td>
+                    <td style="padding:12px; color:#333;">aurielle4@gmail.com</td>
+                </tr>
+                <tr style="background:#f5eee7;">
+                    <td style="padding:12px; color:#7a6c5d;">Phone</td>
+                    <td style="padding:12px; color:#333;">0988667374</td>
+                </tr>
+                <tr>
+                    <td style="padding:12px; color:#7a6c5d;">Address</td>
+                    <td style="padding:12px; color:#333;">Lot 88, Jalan Seri Bayu, 40150, Shah Alam, Selangor</td>
+                </tr>
+                <tr style="background:#f5eee7;">
+                    <td style="padding:12px; color:#7a6c5d;">Hours</td>
+                    <td style="padding:12px; color:#333;">Mon-Fri: 9am - 5pm</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+        &copy; 2024 Aurielle of Oré & Argenté. All rights reserved.
+    </footer>
+
